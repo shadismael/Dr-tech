@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,20 +35,36 @@ public class InLab extends AppCompatActivity {
     ListView listView ;
     ArrayList<BrokenPhone>arrayList=new ArrayList<>();
     MyAdapter<BrokenPhone> arrayAdapter;
+    public BrokenPhone obj;
+    DatabaseReference finalref;
+    ///////////////////////////////////////////////////////////////////////////////////////////////
     FirebaseAuth Mauth;
     FirebaseDatabase database;
+    ///////////////////////////////////////////////////////////////////////////////////////////////
     BrokenPhone belal;
-
-
+    Button fixed;
+    Button totaloss;
+    Button cancel;
+    Dialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lab);
+        ////////////////////////////////////////////////dialog/////////////////////////////////////
+        dialog =new Dialog(this);
+        dialog.setContentView(R.layout.popupshow);
+        dialog.setCancelable(false);
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        fixed=(Button) dialog.findViewById(R.id.btnFixed);
+        totaloss=(Button) dialog.findViewById(R.id.btnTotaloss);
+        cancel=(Button) dialog.findViewById(R.id.btnCancel);
+        ///////////////////////////////////////////////////////////////////////////////////////////
         Mauth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
         databaseReference=FirebaseDatabase.getInstance().getReference(Mauth.getCurrentUser().getUid());
         databaseReference2=databaseReference.child("phones");
+        ///////////////////////////////////////////////////////////////////////////////////////////
         listView=(ListView) findViewById(R.id.listview);
         arrayAdapter=new MyAdapter<BrokenPhone>(this,arrayList);
         listView.setAdapter(arrayAdapter);
@@ -68,21 +85,41 @@ public class InLab extends AppCompatActivity {
 
             }
         });
+        ////////////////////////////////////////////////////////////////////////////////////////////
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  belal=  ((BrokenPhone)adapterView.getAdapter().getItem(i));
+                 obj=belal;
                 databaseReference2.child(belal.getId()).setValue(belal);
                 opendialog();
 
             }
         });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+     cancel.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             dialog.cancel();
+             Toast.makeText(InLab.this, "cancel",
+                     Toast.LENGTH_SHORT).show();
+         }
+     });
+     ////////////////////////////////////Fixed Button///////////////////////////////////////////////
+        fixed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                obj.setDone(true);
+                databaseReference.child("done").push().setValue(obj);
+                databaseReference2.child(obj.getId()).setValue(null);
+
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
     }
+
     public void opendialog(){
-        Dialog dialog=new Dialog(this);
-        dialog.setContentView(R.layout.popupshow);
-        dialog.setCancelable(false);
         TextView cusname=(TextView)dialog.findViewById(R.id.nameview);
         TextView phnum=(TextView)dialog.findViewById(R.id.phonenumberview);
         TextView brnd=(TextView)dialog.findViewById(R.id.brandview);
@@ -100,8 +137,11 @@ public class InLab extends AppCompatActivity {
         dn.setText(dn.getText()+" : "+belal.isDone());
         id.setText(id.getText()+" : "+belal.getId());
 
-
-
         dialog.show();
+        Toast.makeText(InLab.this, "opened",
+                Toast.LENGTH_SHORT).show();
     }
+    ////////////////new data reference and move to new data base and delete old one ////////////////
+
+
 }

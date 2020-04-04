@@ -2,86 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
     android:layout_height="300dp"
-    android:layout_marginLeft="10dp">
-
-    <TextView
-        android:id="@+id/nameview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="name"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/brandview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/nameview"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="22dp"
-        android:gravity="center"
-        android:text="brand"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/idview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/priceview"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/doneview"
-        android:gravity="center"
-        android:text="ID"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/priceview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/passwordview"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@id/defectview"
-        android:gravity="center"
-        android:text="price"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/defectview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/brandview"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-
-        android:gravity="center"
-        android:text="defect"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/doneview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/defectview"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="condition"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/phonenumberview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_toRightOf="@+id/nameview"
-        android:gravity="center"
-        android:text="phone number"
-        android:textSize="15sp" />
+    android:background="@drawable/background2"
+    >
 
     <TextView
         android:id="@+id/passwordview"
@@ -91,30 +13,146 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="21dp"
         android:layout_toRightOf="@id/brandview"
+        android:background="#D0090909"
         android:gravity="center"
         android:text="password"
-        android:textSize="15sp" />
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/brandview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="22dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="brand"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/defectview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brandview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="defect"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/priceview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/defectview"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="price"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/idview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/doneview"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="ID"
+        android:textColor="#08F38D"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/doneview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/defectview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="21dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="condition"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nameview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="name"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/phonenumberview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_toRightOf="@+id/nameview"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="phone number"
+        android:textColor="#08F38D"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/fixed"
+        android:id="@+id/btnFixed"
         android:layout_width="100dp"
         android:layout_height="65dp"
         android:layout_alignParentBottom="true"
-        android:text="fixed" />
+        android:layout_marginBottom="20dp"
+        android:background="#D71E1D1D"
+        android:text="fixed"
+        android:textColor="#08EF12"
+        android:textStyle="bold|italic" />
 
     <Button
-        android:id="@+id/cancel"
+        android:id="@+id/btnCancel"
         android:layout_width="100dp"
         android:layout_height="65dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="cancel" />
+        android:layout_marginBottom="20dp"
+        android:background="#D71E1D1D"
+        android:text="cancel"
+        android:textColor="#F4511E"
+        android:textStyle="bold|italic" />
 
     <Button
-        android:id="@+id/totaloss"
+        android:id="@+id/btnTotaloss"
         android:layout_width="100dp"
         android:layout_height="65dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:text="totaloss" />
+        android:layout_marginBottom="20dp"
+        android:background="#D71E1D1D"
+        android:text="totaloss"
+        android:textColor="#FA0606"
+        android:textStyle="bold|italic" />
 </RelativeLayout>
