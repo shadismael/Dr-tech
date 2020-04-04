@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bachground"
+    tools:context=".Home">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="WELCOME"
+        android:textAllCaps="true"
+        android:textColor="#08D6F0"
+        android:textSize="50sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/btnRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="50dp"
+        android:background="#B446EEA5"
+        android:text="Repair Lab"
+        android:textColor="#F74007"
+        android:textColorHighlight="#00E6DCDC" />
+
+    <Button
+        android:id="@+id/btnCP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="#B446EEA5"
+        android:text="Cellphones"
+        android:textColor="#F74007"
+        android:textColorHighlight="#00E6DCDC" />
+
+    <Button
+        android:id="@+id/btnACC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="#B446EEA5"
+        android:text="Accessories"
+        android:textColor="#F74007"
+        android:textColorHighlight="#00E6DCDC" />
+
+    <Button
+        android:id="@+id/btnPL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="#B446EEA5"
+        android:text="Price List"
+        android:textColor="#F74007"
+        android:textColorHighlight="#00E6DCDC" />
+
+
+</LinearLayout>

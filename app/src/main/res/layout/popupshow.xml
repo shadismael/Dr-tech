@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:layout_marginLeft="10dp">
+
+    <TextView
+        android:id="@+id/nameview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="name"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/brandview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nameview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="22dp"
+        android:gravity="center"
+        android:text="brand"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/idview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/doneview"
+        android:gravity="center"
+        android:text="ID"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/priceview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/passwordview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/defectview"
+        android:gravity="center"
+        android:text="price"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/defectview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/brandview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+
+        android:gravity="center"
+        android:text="defect"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/doneview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/defectview"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="condition"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/phonenumberview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/nameview"
+        android:gravity="center"
+        android:text="phone number"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/passwordview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phonenumberview"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="21dp"
+        android:layout_toRightOf="@id/brandview"
+        android:gravity="center"
+        android:text="password"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/fixed"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:text="fixed" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="cancel" />
+
+    <Button
+        android:id="@+id/totaloss"
+        android:layout_width="100dp"
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="totaloss" />
+</RelativeLayout>
