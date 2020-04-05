@@ -1,33 +1,26 @@
 package com.example.loginactivity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-import java.nio.file.Path;
 import java.util.ArrayList;
-
-import static com.example.loginactivity.MyAdapter.*;
 
 public class InLab extends AppCompatActivity {
     DatabaseReference databaseReference;
@@ -57,8 +50,8 @@ public class InLab extends AppCompatActivity {
         dialog.setCancelable(false);
         ////////////////////////////////////////////////////////////////////////////////////////////
         fixed=(Button) dialog.findViewById(R.id.btnFixed);
-        totaloss=(Button) dialog.findViewById(R.id.btnTotaloss);
-        cancel=(Button) dialog.findViewById(R.id.btnCancel);
+        totaloss=(Button) dialog.findViewById(R.id.btnRemove2);
+        cancel=(Button) dialog.findViewById(R.id.btnCancel2);
         ///////////////////////////////////////////////////////////////////////////////////////////
         Mauth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
@@ -91,7 +84,6 @@ public class InLab extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  belal=  ((BrokenPhone)adapterView.getAdapter().getItem(i));
                  obj=belal;
-                databaseReference2.child(belal.getId()).setValue(belal);
                 opendialog();
 
             }
@@ -106,7 +98,7 @@ public class InLab extends AppCompatActivity {
          }
      });
      ////////////////////////////////////Fixed Button///////////////////////////////////////////////
-        fixed.setOnClickListener(new View.OnClickListener() {
+       /* fixed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 obj.setDone(true);
@@ -115,10 +107,80 @@ public class InLab extends AppCompatActivity {
 
             }
         });
+        */
+       /////////////////////////////////////////////////////////////////////////////////////////////
+       fixed.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               obj.setDone(true);
+               databaseReference2.child(obj.getId()).setValue(null);
+               obj.setId(null);
+               databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
+                   @Override
+                   public void onSuccess(Void aVoid) {
+                       Toast.makeText(InLab.this, "successfully added",
+                               Toast.LENGTH_SHORT).show();
+                       databaseReference.child("done").addValueEventListener(new ValueEventListener() {
+                           @Override
+                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                               if(dataSnapshot.exists()){
+                                   for (DataSnapshot ds :dataSnapshot.getChildren()){
+                                       ds.getRef().child("Id").setValue(ds.getKey());
+                                   }
+                               }
+                           }
+
+                           @Override
+                           public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                           }
+                       });
+                   }
+               });
+           }
+       });
+        ///////////////////////////////////totaloss button//////////////////////////////////////////
+      /*  totaloss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference.child("done").push().setValue(obj);
+                databaseReference2.child(obj.getId()).setValue(null);
+            }
+        });
+        */
+
         ////////////////////////////////////////////////////////////////////////////////////////////
+       totaloss.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               databaseReference2.child(obj.getId()).setValue(null);
+               obj.setId(null);
+               databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
+                   @Override
+                   public void onSuccess(Void aVoid) {
+                       Toast.makeText(InLab.this, "successfully added",
+                               Toast.LENGTH_SHORT).show();
+                       databaseReference.child("done").addValueEventListener(new ValueEventListener() {
+                           @Override
+                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                               if(dataSnapshot.exists()){
+                                   for (DataSnapshot ds :dataSnapshot.getChildren()){
+                                       ds.getRef().child("Id").setValue(ds.getKey());
+                                   }
+                               }
+                           }
 
-    }
+                           @Override
+                           public void onCancelled(@NonNull DatabaseError databaseError) {
 
+                           }
+                       });
+                   }
+               });
+           }
+       });
+           }
+       /////////////////////////////////////////////////////////////////////////////////////////////
     public void opendialog(){
         TextView cusname=(TextView)dialog.findViewById(R.id.nameview);
         TextView phnum=(TextView)dialog.findViewById(R.id.phonenumberview);

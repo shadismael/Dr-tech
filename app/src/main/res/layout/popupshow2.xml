@@ -122,17 +122,6 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnFixed"
-        android:layout_width="100dp"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:background="#D71E1D1D"
-        android:text="fixed"
-        android:textColor="#08EF12"
-        android:textStyle="bold|italic" />
-
-    <Button
         android:id="@+id/btnCancel2"
         android:layout_width="100dp"
         android:layout_height="65dp"
@@ -149,10 +138,10 @@
         android:layout_width="100dp"
         android:layout_height="65dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="20dp"
         android:background="#D71E1D1D"
-        android:text="totaloss"
+        android:text="Remove"
         android:textColor="#FA0606"
         android:textStyle="bold|italic" />
 </RelativeLayout>
