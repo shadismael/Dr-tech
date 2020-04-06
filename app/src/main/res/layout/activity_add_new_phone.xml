@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bachground"
+    android:orientation="vertical"
+    tools:context=".AddNewPhone">
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Add new Phone"
+        android:textColor="#0FDCF5"
+        android:textSize="50sp" />
+
+    <EditText
+        android:id="@+id/Company1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Brand"
+        android:inputType="textPersonName"
+        android:textColor="#0FDCF5"
+        android:textColorHint="#0FDCF5" />
+
+    <EditText
+        android:id="@+id/etPcolor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Color"
+        android:inputType="textPersonName"
+        android:textColor="#0FDCF5"
+        android:textColorHint="#0FDCF5" />
+
+    <EditText
+        android:id="@+id/etPstorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Storage"
+        android:inputType="textPersonName"
+        android:textColor="#0FDCF5"
+        android:textColorHint="#0FDCF5" />
+
+    <EditText
+        android:id="@+id/etPprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Price"
+        android:inputType="textPersonName"
+        android:textColor="#0FDCF5"
+        android:textColorHint="#0FDCF5" />
+
+    <EditText
+        android:id="@+id/etPcPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Customer Price"
+        android:inputType="textPersonName"
+        android:textColor="#0FDCF5"
+        android:textColorHint="#0FDCF5" />
+    <Button
+        android:id="@+id/btnANP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="150dp"
+        android:text="Add Phone" />
+</LinearLayout>
+
+
+

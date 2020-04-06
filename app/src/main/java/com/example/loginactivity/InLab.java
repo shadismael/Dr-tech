@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -58,7 +59,7 @@ public class InLab extends AppCompatActivity {
         databaseReference=FirebaseDatabase.getInstance().getReference(Mauth.getCurrentUser().getUid());
         databaseReference2=databaseReference.child("phones");
         ///////////////////////////////////////////////////////////////////////////////////////////
-        listView=(ListView) findViewById(R.id.listview);
+        listView=(ListView) findViewById(R.id.listview5);
         arrayAdapter=new MyAdapter<BrokenPhone>(this,arrayList);
         listView.setAdapter(arrayAdapter);
         databaseReference2.addValueEventListener(new ValueEventListener() {
@@ -118,7 +119,7 @@ public class InLab extends AppCompatActivity {
                databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
                    @Override
                    public void onSuccess(Void aVoid) {
-                       Toast.makeText(InLab.this, "successfully added",
+                       Toast.makeText(InLab.this, "successfully moved ",
                                Toast.LENGTH_SHORT).show();
                        databaseReference.child("done").addValueEventListener(new ValueEventListener() {
                            @Override
@@ -134,10 +135,14 @@ public class InLab extends AppCompatActivity {
                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
                            }
+
                        });
                    }
                });
+               Intent il=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+               startActivity(il);
            }
+
        });
         ///////////////////////////////////totaloss button//////////////////////////////////////////
       /*  totaloss.setOnClickListener(new View.OnClickListener() {
@@ -177,6 +182,8 @@ public class InLab extends AppCompatActivity {
                        });
                    }
                });
+               Intent to=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+               startActivity(to);
            }
        });
            }

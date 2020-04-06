@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class Cellphone extends AppCompatActivity {
     public Button btnCI;
     public Button btnOP;
+    public Button btnANP;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +19,7 @@ public class Cellphone extends AppCompatActivity {
         setContentView(R.layout.activity_cellphone);
         btnCI=findViewById(R.id.btnCI );
         btnOP=findViewById(R.id.btnOP);
+        btnANP=findViewById(R.id.btnNewPhone);
         //////////////////////////////////////////////
         btnCI.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,5 +40,16 @@ public class Cellphone extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        /////////////////////////////////////////////////
+        btnANP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Cellphone.this, "Add new Phone",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(getApplicationContext(), com.example.loginactivity.AddNewPhone.class);
+                startActivity(intent);
+            }
+        });
+        //////////////////////////////////////////////////////
     }
 }

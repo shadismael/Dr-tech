@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="300dp"
+    android:background="@drawable/background2"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/company2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="Brand"
+        android:textColor="#08F38D"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/color2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="Color"
+        android:textColor="#08F38D"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/storage2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="Storage"
+        android:textColor="#08F38D"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/price2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="Price"
+        android:textColor="#08F38D"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/customerprice2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="50dp"
+        android:background="#D0090909"
+        android:gravity="center"
+        android:text="Customer Price"
+        android:textColor="#08F38D"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/btnSold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="80dp"
+        android:background="#D71E1D1D"
+        android:text="Sold"
+        android:textColor="#FA0606"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/btnCancel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="80dp"
+        android:background="#D71E1D1D"
+        android:text="Cancel"
+        android:textColor="#F4511E"
+        android:textStyle="bold|italic" />
+</LinearLayout>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -100,6 +101,10 @@ public class Fixed extends AppCompatActivity {
            @Override
            public void onClick(View view) {
               myRef.child("done").child(obj2.getId()).setValue(null);
+               Toast.makeText(Fixed.this, "Removed",
+                       Toast.LENGTH_SHORT).show();
+               Intent m=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+               startActivity(m);
            }
        });
 

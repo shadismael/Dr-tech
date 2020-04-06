@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Devide"></activity>
+        <activity android:name=".AddNewPhone"></activity>
+        <activity android:name=".Devide" />
         <activity android:name=".InLab" />
         <activity android:name=".OrderAccessories" />
         <activity android:name=".ShowAccessories" />

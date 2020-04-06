@@ -19,11 +19,22 @@
         android:textSize="50sp" />
 
     <Button
-        android:id="@+id/btnCI"
+        android:id="@+id/btnNewPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
+        android:layout_marginRight="50dp"
+        android:background="#B446EEA5"
+        android:text="Add new Phone"
+        android:textColor="#F74007" />
+
+    <Button
+        android:id="@+id/btnCI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:background="#B446EEA5"
         android:text="cellphones inventory"

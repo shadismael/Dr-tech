@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bachground"
+    android:orientation="vertical"
     tools:context=".CellphonesInventory">
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginRight="45dp"
+        android:gravity="center"
+        android:text="phones to sell"
+        android:textColor="#B446EEA5"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ListView
+        android:id="@+id/listview5"
+        android:layout_width="409dp"
+        android:layout_height="552dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#B446EEA5"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</LinearLayout>
