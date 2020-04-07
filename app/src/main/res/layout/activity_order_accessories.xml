@@ -1,10 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/bachground"
     tools:context=".OrderAccessories">
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/etEmail2"
+        android:layout_width="326dp"
+        android:layout_height="61dp"
+        android:background="#B0000000"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="To"
+        android:inputType="textPersonName"
+        android:textColor="#FBFBFB"
+        android:textColorHint="#B446EEA5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131" />
+
+    <EditText
+        android:id="@+id/etSubject2"
+        android:layout_width="291dp"
+        android:layout_height="61dp"
+        android:background="#B0000000"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Subject"
+        android:inputType="textPersonName"
+        android:textColor="#FBFBFB"
+        android:textColorHint="#B446EEA5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
+
+    <EditText
+        android:id="@+id/etMessage2"
+        android:layout_width="325dp"
+        android:layout_height="286dp"
+        android:background="#B0000000"
+        android:ems="10"
+        android:fadeScrollbars="false"
+        android:gravity="start|top"
+        android:hint="mesasge"
+        android:inputType="textPersonName"
+        android:textColor="#FBFBFB"
+        android:textColorHint="#B446EEA5"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="275dp"
+        android:layout_height="62dp"
+        android:gravity="center"
+        android:text="Order Parts"
+        android:textColor="#B446EEA5"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.008" />
+
+    <Button
+        android:id="@+id/btnSend2"
+        android:layout_width="129dp"
+        android:layout_height="64dp"
+        android:background="#C3121111"
+        android:text="Send"
+        android:textColor="#F74007"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.957" />
+</androidx.constraintlayout.widget.ConstraintLayout>

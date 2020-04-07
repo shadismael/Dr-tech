@@ -28,20 +28,15 @@ public class OrderParts extends AppCompatActivity {
         message=findViewById(R.id.etMessage);
         send=findViewById(R.id.btnSend);
         ////////////////////////////////////////////////////////////////////////////////////////////
-        final Intent emailIntent = new Intent(Intent.ACTION_SEND);
-        emailIntent.setData(Uri.parse("mail to:"));
-        emailIntent.setType("text/plain");
-        emailIntent.putExtra(Intent.EXTRA_EMAIL, email.getText().toString());
-        emailIntent.putExtra(Intent.EXTRA_CC, email.getText().toString());
-        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject.getText().toString());
-        emailIntent.putExtra(Intent.EXTRA_TEXT, message.getText().toString());
-        send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(emailIntent);
-
-            }
-        });
+       send.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("mailto:"+email.getText().toString()));
+               intent.putExtra(Intent.EXTRA_SUBJECT,""+subject.getText().toString());
+               intent.putExtra(Intent.EXTRA_TEXT,""+message.getText().toString());
+               startActivity(intent);
+           }
+       });
     }
 
     }

@@ -19,35 +19,36 @@
         android:textSize="50sp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/CPrices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
         android:background="#B446EEA5"
-        android:text="Button"
+        android:text="Cellphones Prices"
         android:textColor="#F74007" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/PartsPrices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:background="#B446EEA5"
-        android:text="Button"
+        android:text="Parts Prices"
         android:textColor="#F74007" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/accPrices"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:background="#B446EEA5"
-        android:text="Button"
+        android:text="Accessories Prices"
         android:textColor="#F74007" />
+
 </LinearLayout>
