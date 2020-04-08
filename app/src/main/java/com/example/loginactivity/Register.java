@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,9 @@ public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public String email;
     public String password;
+    ///////////////////////////////////////////////////////////////////////////////
+    MediaPlayer RegisterSound , error;
+    ///////////////////////////////////////////////////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +38,8 @@ public class Register extends AppCompatActivity {
         ConfirmPassword=(EditText) findViewById(R.id.etSecondNewPassword);
         btnRegister=(Button) findViewById(R.id.btRegister);
         mAuth = FirebaseAuth.getInstance();
+        RegisterSound=MediaPlayer.create(this,R.raw.register);
+        error=MediaPlayer.create(this,R.raw.error);
         ///////////////////////////////////////////////////////////////////////register begin///////
         btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -64,12 +70,14 @@ public class Register extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                           Toast.makeText(Register.this,"success",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+                            RegisterSound.start();
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Register.this,"fail",Toast.LENGTH_SHORT).show();
                             Toast.makeText(Register.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            error.start();
 
                         }
 
