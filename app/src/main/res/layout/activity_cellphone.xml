@@ -25,7 +25,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Add new Phone"
         android:textColor="#F74007" />
 
@@ -36,7 +36,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="cellphones inventory"
         android:textColor="#F74007" />
 
@@ -47,7 +47,18 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Order phones"
         android:textColor="#F74007" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonback5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="300dp"
+        android:background="@drawable/custom_button"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
 </LinearLayout>

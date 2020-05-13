@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,8 @@ public class InLab extends AppCompatActivity {
     MyAdapter<BrokenPhone> arrayAdapter;
     public BrokenPhone obj;
     DatabaseReference finalref;
+    ImageButton btnback;
+    ImageButton btnhome;
     ///////////////////////////////////////////////////////////////////////////////////////////////
     FirebaseAuth Mauth;
     FirebaseDatabase database;
@@ -53,6 +56,8 @@ public class InLab extends AppCompatActivity {
         fixed=(Button) dialog.findViewById(R.id.btnFixed);
         totaloss=(Button) dialog.findViewById(R.id.btnRemove2);
         cancel=(Button) dialog.findViewById(R.id.btnCancel2);
+        btnback=findViewById(R.id.imagebuttonback3);
+        btnhome=findViewById(R.id.imagebuttonhome2);
         ///////////////////////////////////////////////////////////////////////////////////////////
         Mauth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
@@ -98,6 +103,26 @@ public class InLab extends AppCompatActivity {
                      Toast.LENGTH_SHORT).show();
          }
      });
+     ///////////////////////////////////////////////////////////////////////////////////////////////
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(InLab.this, "Labratory",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(InLab.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
+            }
+        });
      ////////////////////////////////////Fixed Button///////////////////////////////////////////////
        /* fixed.setOnClickListener(new View.OnClickListener() {
             @Override

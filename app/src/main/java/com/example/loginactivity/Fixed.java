@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ public class Fixed extends AppCompatActivity {
     Dialog dialog2;
     Button remove;
     Button cancel2;
+    ImageButton btnback;
+    ImageButton btnhome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {// show the fixed phones from data base=> class
         super.onCreate(savedInstanceState);
@@ -56,6 +59,8 @@ public class Fixed extends AppCompatActivity {
         ////////////////////////////////////////////////////////////////////////////////////////////
         remove=dialog2.findViewById(R.id.btnRemove2);
         cancel2=dialog2.findViewById(R.id.btnCancel2);
+        btnback=findViewById(R.id.imagebuttonback4);
+        btnhome=findViewById(R.id.imagebuttonhome3);
         ////////////////////////////////////////////////////////////////////////////////////////////
         myRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -107,6 +112,26 @@ public class Fixed extends AppCompatActivity {
                startActivity(m);
            }
        });
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Fixed.this, "Labratory",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Fixed.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////Fixed Button///////////////////////////////////////////////
 
     }
     //////////////////////////////////////open dialog///////////////////////////////////////////////

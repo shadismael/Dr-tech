@@ -25,7 +25,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Cellphones Prices"
         android:textColor="#F74007" />
 
@@ -36,7 +36,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Parts Prices"
         android:textColor="#F74007" />
 
@@ -47,7 +47,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Accessories Prices"
         android:textColor="#F74007" />
 

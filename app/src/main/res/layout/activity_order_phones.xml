@@ -68,7 +68,7 @@
         android:layout_width="275dp"
         android:layout_height="62dp"
         android:gravity="center"
-        android:text="Order Parts"
+        android:text="Order Phones"
         android:textColor="#B446EEA5"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"

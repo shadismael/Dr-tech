@@ -28,7 +28,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Repair Lab"
         android:textColor="#F74007"
         android:textColorHighlight="#00E6DCDC" />
@@ -40,7 +40,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Cellphones"
         android:textColor="#F74007"
         android:textColorHighlight="#00E6DCDC" />
@@ -52,7 +52,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Accessories"
         android:textColor="#F74007"
         android:textColorHighlight="#00E6DCDC" />
@@ -64,7 +64,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Price List"
         android:textColor="#F74007"
         android:textColorHighlight="#00E6DCDC" />

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,6 +29,8 @@ public class ADPTL extends AppCompatActivity {
     public EditText Defect;
     public EditText Price;
     public Button Fix;
+    public ImageButton ImgBtn;
+    public ImageButton ImgBtnhome;
     public BrokenPhone Iphone;
     public FirebaseDatabase database ;
     public FirebaseAuth mauth;
@@ -43,6 +46,8 @@ public class ADPTL extends AppCompatActivity {
         Defect=findViewById(R.id.etDefect);
         Price=findViewById(R.id.etPrice);
         Fix=findViewById(R.id.btnADD);
+        ImgBtn=findViewById(R.id.imgbtnback2);
+        ImgBtnhome=findViewById(R.id.imagebuttonhome);
         Iphone=new BrokenPhone();
         database= FirebaseDatabase.getInstance();
         mauth=FirebaseAuth.getInstance();
@@ -86,9 +91,28 @@ public class ADPTL extends AppCompatActivity {
                         });
                     }
                 });
-                Intent fi=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
-                startActivity(fi);
 
+
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        ImgBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ADPTL.this, "Labratory",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        ImgBtnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ADPTL.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
             }
         });
 ////////////////////////////////////////////////////////////////////////////////////////////
