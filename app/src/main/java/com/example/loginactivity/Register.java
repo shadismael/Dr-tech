@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +27,8 @@ public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     public String email;
     public String password;
+    TextView r;
+    ImageButton back;
     ///////////////////////////////////////////////////////////////////////////////
     MediaPlayer RegisterSound , error;
     ///////////////////////////////////////////////////////////////////////////////
@@ -40,6 +44,8 @@ public class Register extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         RegisterSound=MediaPlayer.create(this,R.raw.register);
         error=MediaPlayer.create(this,R.raw.error);
+        r=findViewById(R.id.textView11);
+        back=findViewById(R.id.imagebuttonBR);
         ///////////////////////////////////////////////////////////////////////register begin///////
         btnRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -52,6 +58,16 @@ public class Register extends AppCompatActivity {
 
 
 
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Register.this, "Log in",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.loginactivity.class);
+                startActivity(PL);
             }
         });
 

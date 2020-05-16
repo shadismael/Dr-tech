@@ -18,6 +18,7 @@
         android:layout_marginRight="20dp"
         android:gravity="center"
         android:text="Labratory"
+        android:background="@drawable/custom_label"
         android:textColor="#08D6F0"
         android:textSize="50sp" />
 

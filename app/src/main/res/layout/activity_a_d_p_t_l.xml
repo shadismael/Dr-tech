@@ -15,6 +15,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Add Phone"
+        android:background="@drawable/custom_label"
         android:textColor="#08D6F0"
         android:textSize="50sp" />
 
@@ -109,7 +110,10 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="150dp"
-        android:text="Fix" />
+        android:background="@drawable/custom_button"
+        android:text="Fix"
+        android:textColor="#F4511E"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"

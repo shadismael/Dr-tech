@@ -2,10 +2,12 @@ package com.example.loginactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class PriceList extends AppCompatActivity {
@@ -13,6 +15,7 @@ public class PriceList extends AppCompatActivity {
     Button PP;
     Button AccP;
     WebView webview;
+    ImageButton back;
 ////////////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class PriceList extends AppCompatActivity {
         PP=findViewById(R.id.PartsPrices);
         AccP=findViewById(R.id.accPrices);
         webview=new WebView(this);
+        back=findViewById(R.id.imagebuttonbackP);
        // setContentView(webview);
         ////////////////////////////////////////////////////////////////////////////////////////////
         Celp.setOnClickListener(new View.OnClickListener() {
@@ -53,5 +57,16 @@ public class PriceList extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+        /////////////////////////////////////////////////////////////////////////////////////////////
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(PriceList.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
     }
 }

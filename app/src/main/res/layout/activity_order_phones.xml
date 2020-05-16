@@ -11,25 +11,26 @@
         android:id="@+id/etEmail3"
         android:layout_width="326dp"
         android:layout_height="61dp"
-        android:background="#B0000000"
+        android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
-        android:hint="To"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:textColor="#FBFBFB"
         android:textColorHint="#B446EEA5"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <EditText
         android:id="@+id/etSubject3"
         android:layout_width="291dp"
         android:layout_height="61dp"
-        android:background="#B0000000"
+        android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
         android:hint="Subject"
@@ -39,20 +40,19 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.295" />
+        app:layout_constraintVertical_bias="0.262" />
 
     <EditText
         android:id="@+id/etMessage3"
         android:layout_width="325dp"
         android:layout_height="286dp"
-        android:background="#B0000000"
-        android:ems="10"
-        android:fadeScrollbars="false"
-        android:gravity="start|top"
-        android:hint="mesasge"
+        android:background="@drawable/custom_label"        android:ems="10"
+        android:fadeScrollbars="true"
+        android:gravity="center|center_horizontal"
+        android:hint="Mesasge"
+        android:foregroundGravity="center"
         android:inputType="textPersonName"
         android:textColor="#FBFBFB"
         android:textColorHint="#B446EEA5"
@@ -61,27 +61,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="275dp"
         android:layout_height="62dp"
+        android:background="@drawable/custom_label"
         android:gravity="center"
         android:text="Order Phones"
         android:textColor="#B446EEA5"
-        android:textSize="50sp"
+        android:textSize="38sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/btnSend3"
         android:layout_width="129dp"
         android:layout_height="64dp"
-        android:background="#C3121111"
+        android:background="@drawable/custom_button"
         android:text="Send"
         android:textColor="#F74007"
         android:textSize="20sp"
@@ -90,5 +91,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.957" />
+        app:layout_constraintVertical_bias="0.884" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonBOP"
+        android:layout_width="86dp"
+        android:layout_height="51dp"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonHOP"
+        android:layout_width="86dp"
+        android:layout_height="51dp"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

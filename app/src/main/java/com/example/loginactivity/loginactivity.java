@@ -31,6 +31,7 @@ public class loginactivity extends AppCompatActivity {
     Calendar calendar;
     String currentDate;
     TextView tvDate;
+    TextView dt;
 
 
     @Override
@@ -40,6 +41,7 @@ public class loginactivity extends AppCompatActivity {
         User=(EditText)findViewById(R.id.etEmail);
         Password=(EditText) findViewById(R.id.etSecondName);
         Login=(Button) findViewById(R.id.btLogin);
+        dt=findViewById(R.id.textView12);
         ///////////////////////////////////////////////////////////////////////////////////
         welcome=MediaPlayer.create(this,R.raw.welcome);
         error=MediaPlayer.create(this,R.raw.error);

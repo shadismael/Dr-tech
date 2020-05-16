@@ -17,6 +17,7 @@
         android:layout_marginRight="20dp"
         android:gravity="center"
         android:text="Accessories"
+        android:background="@drawable/custom_label"
         android:textColor="#08D6F0"
         android:textSize="50dp" />
 
@@ -27,7 +28,7 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="150dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Show Accessories"
         android:textColor="#F74007" />
 
@@ -38,7 +39,24 @@
         android:layout_marginLeft="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
-        android:background="#B446EEA5"
+        android:background="@drawable/custom_button"
         android:text="Order Accessories"
         android:textColor="#F74007" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imagebuttonbackAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="240dp"
+            android:layout_marginRight="300dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+    </LinearLayout>
 </LinearLayout>

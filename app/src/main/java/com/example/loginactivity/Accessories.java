@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class Accessories extends AppCompatActivity {
     public Button btnSA;
     public Button btnOA;
+    ImageButton back;
     WebView webview;
 
     @Override
@@ -21,6 +23,7 @@ public class Accessories extends AppCompatActivity {
         btnSA=findViewById(R.id.btnSA);
         btnOA=findViewById(R.id.btnOA);
         webview=new WebView(this);
+        back=findViewById(R.id.imagebuttonbackAcc);
         //////////////////////////////////////////////
         btnSA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,5 +45,15 @@ public class Accessories extends AppCompatActivity {
             }
         });
         ////////////////////////////////////////////////////////
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(Accessories.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
+            }
+        });
+        /////////////////////////////////////////////////////////////
     }
 }

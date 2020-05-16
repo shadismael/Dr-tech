@@ -15,6 +15,7 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Prices"
+        android:background="@drawable/custom_label"
         android:textColor="#08D6F0"
         android:textSize="50sp" />
 
@@ -50,5 +51,22 @@
         android:background="@drawable/custom_button"
         android:text="Accessories Prices"
         android:textColor="#F74007" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imagebuttonbackP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="300dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+    </LinearLayout>
 
 </LinearLayout>

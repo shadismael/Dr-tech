@@ -10,11 +10,13 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="match_parent"
+        android:layout_width="343dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="45dp"
         android:layout_marginRight="45dp"
+        android:background="@drawable/custom_label"
         android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="Phones in lab"
         android:textColor="#B446EEA5"
         android:textSize="50sp"

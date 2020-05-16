@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +36,8 @@ public class CellphonesInventory extends AppCompatActivity {
     Dialog dialog;
     Button sold;
     Button cancel;
+    ImageButton back;
+    ImageButton home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,8 @@ public class CellphonesInventory extends AppCompatActivity {
         ////////////////////////////////////////////////////////////////////////////////////////////
         sold=dialog.findViewById(R.id.btnSold);
         cancel=dialog.findViewById(R.id.btnCancel2);
+        back=findViewById(R.id.imagebuttonbackPTS);
+        home=findViewById(R.id.imagebuttonhomePTS);
         ////////////////////////////////////////////////////////////////////////////////////////////
         myRef2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -107,7 +112,26 @@ public class CellphonesInventory extends AppCompatActivity {
             }
         });
         /////////////////////////////////////////////////////////////////////////////////////////////
-
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CellphonesInventory.this, "Cellphone",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Cellphone.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(CellphonesInventory.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
+            }
+        });
+        /////////////////////////////////////////////////////////////////////////////////////////
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////

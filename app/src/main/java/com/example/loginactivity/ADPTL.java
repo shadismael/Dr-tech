@@ -89,6 +89,8 @@ public class ADPTL extends AppCompatActivity {
 
                             }
                         });
+                        Intent ACC=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                        startActivity(ACC);
                     }
                 });
 

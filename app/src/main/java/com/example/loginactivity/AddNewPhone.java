@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,6 +29,8 @@ public class AddNewPhone extends AppCompatActivity {
     public NewPhones Galaxy;
     public FirebaseDatabase database3 ;
     public FirebaseAuth MYauth;
+    ImageButton back;
+    ImageButton home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,8 @@ public class AddNewPhone extends AppCompatActivity {
         Price=findViewById(R.id.etPprice);
         CustomerPrice=findViewById(R.id.etPcPrice);
         Add=findViewById(R.id.btnANP);
+        back=findViewById(R.id.imagebuttonbacknp);
+        home=findViewById(R.id.imagebuttonhnp);
         ///////////////////////////////////////////////////////////////////////////////////////////
         Galaxy=new NewPhones();
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,6 +81,26 @@ public class AddNewPhone extends AppCompatActivity {
                 Intent a=new Intent(getApplicationContext(), com.example.loginactivity.Cellphone.class);
                 startActivity(a);
 
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(AddNewPhone.this, "Cellphone",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Cellphone.class);
+                startActivity(PL);
+            }
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(AddNewPhone.this, "Home",
+                        Toast.LENGTH_SHORT).show();
+                Intent PL=new Intent(getApplicationContext(), com.example.loginactivity.Home.class);
+                startActivity(PL);
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////

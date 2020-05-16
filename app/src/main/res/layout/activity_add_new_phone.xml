@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
+        android:background="@drawable/custom_label"
         android:text="Add new Phone"
         android:textColor="#0FDCF5"
         android:textSize="50sp" />
@@ -87,6 +88,7 @@
         android:inputType="textPersonName"
         android:textColor="#0FDCF5"
         android:textColorHint="#0FDCF5" />
+
     <Button
         android:id="@+id/btnANP"
         android:layout_width="match_parent"
@@ -94,7 +96,37 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="50dp"
         android:layout_marginRight="150dp"
-        android:text="Add Phone" />
+        android:background="@drawable/custom_button"
+        android:text="Add Phone"
+        android:textColor="#F4511E"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/imagebuttonbacknp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/imagebuttonhnp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            app:srcCompat="@drawable/ic_home_black_24dp" />
+    </LinearLayout>
 </LinearLayout>
 
 

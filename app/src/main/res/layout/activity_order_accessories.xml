@@ -11,25 +11,26 @@
         android:id="@+id/etEmail2"
         android:layout_width="326dp"
         android:layout_height="61dp"
-        android:background="#B0000000"
+        android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
-        android:hint="To"
+        android:hint="Email"
         android:inputType="textPersonName"
         android:textColor="#FBFBFB"
         android:textColorHint="#B446EEA5"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintVertical_bias="0.141" />
 
     <EditText
         android:id="@+id/etSubject2"
         android:layout_width="291dp"
         android:layout_height="61dp"
-        android:background="#B0000000"
+        android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
         android:hint="Subject"
@@ -48,11 +49,11 @@
         android:id="@+id/etMessage2"
         android:layout_width="325dp"
         android:layout_height="286dp"
-        android:background="#B0000000"
+        android:background="@drawable/custom_label"
         android:ems="10"
         android:fadeScrollbars="false"
-        android:gravity="start|top"
-        android:hint="mesasge"
+        android:gravity="center_horizontal|center"
+        android:hint="Message"
         android:inputType="textPersonName"
         android:textColor="#FBFBFB"
         android:textColorHint="#B446EEA5"
@@ -65,23 +66,24 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="275dp"
-        android:layout_height="62dp"
+        android:layout_width="331dp"
+        android:layout_height="59dp"
+        android:background="@drawable/custom_label"
         android:gravity="center"
         android:text="Order Accessories"
         android:textColor="#B446EEA5"
-        android:textSize="50sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/btnSend2"
         android:layout_width="129dp"
         android:layout_height="64dp"
-        android:background="#C3121111"
+        android:background="@drawable/custom_button"
         android:text="Send"
         android:textColor="#F74007"
         android:textSize="20sp"
@@ -91,4 +93,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.957" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonBOA"
+        android:layout_width="86dp"
+        android:layout_height="51dp"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    <ImageButton
+        android:id="@+id/imagebuttonHOA"
+        android:layout_width="86dp"
+        android:layout_height="51dp"
+        android:background="@drawable/custom_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.927"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
