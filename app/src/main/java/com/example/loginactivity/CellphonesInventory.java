@@ -44,10 +44,6 @@ public class CellphonesInventory extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cellphones_inventory);
         myarrayList=new ArrayList<>();
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        dialog =new Dialog(this);
-        dialog.setContentView(R.layout.popupshow3);
-        dialog.setCancelable(false);
         ////////////////////////////////firebase///////////////////////////////////////////////////
         myauth=FirebaseAuth.getInstance();
         mydatabase=FirebaseDatabase.getInstance();
@@ -58,8 +54,6 @@ public class CellphonesInventory extends AppCompatActivity {
         myarrayAdapter=new MyAdapter2<NewPhones>(this,myarrayList);
         listView.setAdapter(myarrayAdapter);
         ////////////////////////////////////////////////////////////////////////////////////////////
-        sold=dialog.findViewById(R.id.btnSold);
-        cancel=dialog.findViewById(R.id.btnCancel2);
         back=findViewById(R.id.imagebuttonbackPTS);
         home=findViewById(R.id.imagebuttonhomePTS);
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -90,27 +84,7 @@ public class CellphonesInventory extends AppCompatActivity {
 
             }
         });
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        sold.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                myRef.child("newPhone").child(obj2.getId()).setValue(null);
-                Toast.makeText(CellphonesInventory.this, "Sold",
-                        Toast.LENGTH_SHORT).show();
-                Intent m=new Intent(getApplicationContext(), com.example.loginactivity.CellphonesInventory.class);
-                startActivity(m);
-            }
-        });
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.cancel();
-                Toast.makeText(CellphonesInventory.this, "Closed",
-                        Toast.LENGTH_SHORT).show();
 
-            }
-        });
         /////////////////////////////////////////////////////////////////////////////////////////////
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +110,13 @@ public class CellphonesInventory extends AppCompatActivity {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     public void opendialog(){
+        dialog =new Dialog(this);
+        dialog.setContentView(R.layout.popupshow3);
+        dialog.setCancelable(false);
+        ////////////////////////////////////////////////////
+        sold=dialog.findViewById(R.id.btnSold);
+        cancel=dialog.findViewById(R.id.btnCancel2);
+        ////////////////////////////////////////////////////
         TextView comname=(TextView)dialog.findViewById(R.id.company2);
         TextView col=(TextView)dialog.findViewById(R.id.color2);
         TextView strg=(TextView)dialog.findViewById(R.id.storage2);
@@ -149,6 +130,29 @@ public class CellphonesInventory extends AppCompatActivity {
         dialog.show();
         Toast.makeText(CellphonesInventory.this, "opened",
                 Toast.LENGTH_SHORT).show();
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                Toast.makeText(CellphonesInventory.this, "Closed",
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        ///////////////////////////////////////////////////////////////////////////////////////////
+        sold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myRef.child("newPhone").child(obj2.getId()).setValue(null);
+                Toast.makeText(CellphonesInventory.this, "Sold",
+                        Toast.LENGTH_SHORT).show();
+                Intent m=new Intent(getApplicationContext(), com.example.loginactivity.CellphonesInventory.class);
+                startActivity(m);
+            }
+        });
+
+
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////
 }

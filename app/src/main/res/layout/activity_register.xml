@@ -43,11 +43,12 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
-        android:ems="10"
         android:background="@drawable/custom_label"
+        android:ems="10"
         android:gravity="center"
         android:hint="New Password"
         android:inputType="textPersonName"
+        android:password="true"
         android:textColor="#0FDCF5"
         android:textColorHint="#0FDCF5" />
 
@@ -59,11 +60,12 @@
         android:layout_marginLeft="40dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="40dp"
-        android:ems="10"
         android:background="@drawable/custom_label"
+        android:ems="10"
         android:gravity="center"
         android:hint="Confirm Password"
         android:inputType="textPersonName"
+        android:password="true"
         android:textColor="#0FDCF5"
         android:textColorHint="#0FDCF5" />
 

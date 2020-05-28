@@ -4,7 +4,7 @@ import android.widget.Adapter;
 
 public class BrokenPhone  {
     private String Name;
-    private Float PhoneNumber ;
+    private String PhoneNumber ;
     private String Brand;
     private String Password;
     private String Defect;
@@ -13,7 +13,7 @@ public class BrokenPhone  {
     private String Id ;
 
 
-    public BrokenPhone(String name, Float phoneNumber, String brand, String password, String defect, int price) {
+    public BrokenPhone(String name, String phoneNumber, String brand, String password, String defect, int price) {
         Name = name;
         PhoneNumber = phoneNumber;
         Brand = brand;
@@ -35,11 +35,11 @@ public class BrokenPhone  {
         Name = name;
     }
 
-    public Float getPhoneNumber() {
+    public String getPhoneNumber() {
         return PhoneNumber;
     }
 
-    public void setPhoneNumber(Float phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         PhoneNumber = phoneNumber;
     }
 

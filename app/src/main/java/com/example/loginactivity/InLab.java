@@ -2,10 +2,13 @@ package com.example.loginactivity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -34,6 +37,10 @@ public class InLab extends AppCompatActivity {
     DatabaseReference finalref;
     ImageButton btnback;
     ImageButton btnhome;
+    public String phone;
+    String message="your phone is fixed";
+    String message2="unfortunately your phone can't be fixed";
+    SmsManager smsManager;
     ///////////////////////////////////////////////////////////////////////////////////////////////
     FirebaseAuth Mauth;
     FirebaseDatabase database;
@@ -48,21 +55,16 @@ public class InLab extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_lab);
-        ////////////////////////////////////////////////dialog/////////////////////////////////////
-        dialog =new Dialog(this);
-        dialog.setContentView(R.layout.popupshow);
-        dialog.setCancelable(false);
-        ////////////////////////////////////////////////////////////////////////////////////////////
-        fixed=(Button) dialog.findViewById(R.id.btnFixed);
-        totaloss=(Button) dialog.findViewById(R.id.btnRemove2);
-        cancel=(Button) dialog.findViewById(R.id.btnCancel2);
         btnback=findViewById(R.id.imagebuttonback3);
         btnhome=findViewById(R.id.imagebuttonhome2);
+        smsManager=SmsManager.getDefault();
         ///////////////////////////////////////////////////////////////////////////////////////////
         Mauth=FirebaseAuth.getInstance();
         database=FirebaseDatabase.getInstance();
         databaseReference=FirebaseDatabase.getInstance().getReference(Mauth.getCurrentUser().getUid());
         databaseReference2=databaseReference.child("phones");
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        smsManager=SmsManager.getDefault();
         ///////////////////////////////////////////////////////////////////////////////////////////
         listView=(ListView) findViewById(R.id.listview5);
         arrayAdapter=new MyAdapter<BrokenPhone>(this,arrayList);
@@ -90,19 +92,13 @@ public class InLab extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                  belal=  ((BrokenPhone)adapterView.getAdapter().getItem(i));
                  obj=belal;
+                 phone=obj.getPhoneNumber();
                 opendialog();
 
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
-     cancel.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View view) {
-             dialog.cancel();
-             Toast.makeText(InLab.this, "cancel",
-                     Toast.LENGTH_SHORT).show();
-         }
-     });
+
      ///////////////////////////////////////////////////////////////////////////////////////////////
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,96 +120,25 @@ public class InLab extends AppCompatActivity {
             }
         });
      ////////////////////////////////////Fixed Button///////////////////////////////////////////////
-       /* fixed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                obj.setDone(true);
-                databaseReference.child("done").push().setValue(obj);
-                databaseReference2.child(obj.getId()).setValue(null);
 
-            }
-        });
-        */
        /////////////////////////////////////////////////////////////////////////////////////////////
-       fixed.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               obj.setDone(true);
-               databaseReference2.child(obj.getId()).setValue(null);
-               obj.setId(null);
-               databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
-                   @Override
-                   public void onSuccess(Void aVoid) {
-                       Toast.makeText(InLab.this, "successfully moved ",
-                               Toast.LENGTH_SHORT).show();
-                       databaseReference.child("done").addValueEventListener(new ValueEventListener() {
-                           @Override
-                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                               if(dataSnapshot.exists()){
-                                   for (DataSnapshot ds :dataSnapshot.getChildren()){
-                                       ds.getRef().child("Id").setValue(ds.getKey());
-                                   }
-                               }
-                           }
 
-                           @Override
-                           public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                           }
-
-                       });
-                   }
-               });
-               Intent il=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
-               startActivity(il);
-           }
-
-       });
         ///////////////////////////////////totaloss button//////////////////////////////////////////
-      /*  totaloss.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                databaseReference.child("done").push().setValue(obj);
-                databaseReference2.child(obj.getId()).setValue(null);
-            }
-        });
-        */
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////
-       totaloss.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               databaseReference2.child(obj.getId()).setValue(null);
-               obj.setId(null);
-               databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
-                   @Override
-                   public void onSuccess(Void aVoid) {
-                       Toast.makeText(InLab.this, "successfully added",
-                               Toast.LENGTH_SHORT).show();
-                       databaseReference.child("done").addValueEventListener(new ValueEventListener() {
-                           @Override
-                           public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                               if(dataSnapshot.exists()){
-                                   for (DataSnapshot ds :dataSnapshot.getChildren()){
-                                       ds.getRef().child("Id").setValue(ds.getKey());
-                                   }
-                               }
-                           }
 
-                           @Override
-                           public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                           }
-                       });
-                   }
-               });
-               Intent to=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
-               startActivity(to);
-           }
-       });
            }
        /////////////////////////////////////////////////////////////////////////////////////////////
     public void opendialog(){
+        dialog =new Dialog(this);
+        dialog.setContentView(R.layout.popupshow);
+        dialog.setCancelable(false);
+        //////////////////////////////////////
+        fixed=(Button) dialog.findViewById(R.id.btnFixed);
+        totaloss=(Button) dialog.findViewById(R.id.btnRemove2);
+        cancel=(Button) dialog.findViewById(R.id.btnCancel2);
+        //////////////////////////////////////
         TextView cusname=(TextView)dialog.findViewById(R.id.nameview);
         TextView phnum=(TextView)dialog.findViewById(R.id.phonenumberview);
         TextView brnd=(TextView)dialog.findViewById(R.id.brandview);
@@ -227,15 +152,105 @@ public class InLab extends AppCompatActivity {
         brnd.setText(brnd.getText()+" : "+belal.getBrand());
         pswrd.setText(pswrd.getText()+" : "+belal.getPassword());
         defect.setText(defect.getText()+" : "+belal.getDefect());
-        prs.setText(prs.getText()+" : "+belal.getPassword());
+        prs.setText(prs.getText()+" : "+belal.getPrice());
         dn.setText(dn.getText()+" : "+belal.isDone());
         id.setText(id.getText()+" : "+belal.getId());
 
         dialog.show();
         Toast.makeText(InLab.this, "opened",
                 Toast.LENGTH_SHORT).show();
+        ///////////////////////////////////////////////////
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.cancel();
+                Toast.makeText(InLab.this, "cancel",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        ///////////////////////////////////////////////////////
+        fixed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                obj.setDone(true);
+                databaseReference2.child(obj.getId()).setValue(null);
+                obj.setId(null);
+                databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(InLab.this, "successfully moved ",
+                                Toast.LENGTH_SHORT).show();
+                        databaseReference.child("done").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()){
+                                    for (DataSnapshot ds :dataSnapshot.getChildren()){
+                                        ds.getRef().child("Id").setValue(ds.getKey());
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+
+                        });
+
+
+                    }
+                }); smsManager.sendTextMessage(obj.getPhoneNumber(),null,message,null,null);
+                Intent il=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(il);
+            }
+
+        });
+        ////////////////////////////////////////////////////////////////////////////////////////////
+        totaloss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                databaseReference2.child(obj.getId()).setValue(null);
+                obj.setId(null);
+                databaseReference.child("done").push().setValue(obj).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(InLab.this, "successfully added",
+                                Toast.LENGTH_SHORT).show();
+                        databaseReference.child("done").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()){
+                                    for (DataSnapshot ds :dataSnapshot.getChildren()){
+                                        ds.getRef().child("Id").setValue(ds.getKey());
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+
+                    }
+                });
+                smsManager.sendTextMessage(obj.getPhoneNumber(),null,message2,null,null);
+                Intent to=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(to);
+            }
+        });
+        //////////////////////////////////////////////////////////////////////////////////////////////
+
     }
     ////////////////new data reference and move to new data base and delete old one ////////////////
+
+
+
+
+
+
+
+
 
 
 }

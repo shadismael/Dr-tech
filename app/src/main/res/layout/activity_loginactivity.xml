@@ -27,8 +27,8 @@
 
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="294dp"
-        android:layout_height="75dp"
+        android:layout_width="359dp"
+        android:layout_height="74dp"
         android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
@@ -45,14 +45,15 @@
 
     <EditText
         android:id="@+id/etSecondName"
-        android:layout_width="294dp"
-        android:layout_height="75dp"
+        android:layout_width="359dp"
+        android:layout_height="74dp"
         android:background="@drawable/custom_label"
         android:ems="10"
         android:gravity="center"
         android:hint="Password"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:password="true"
         android:textColor="#09D6F1"
         android:textColorHint="#0AD4F1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -86,14 +87,14 @@
         android:gravity="center"
         android:text="Register"
         android:textColor="#0ACFEC"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.681" />
+        app:layout_constraintVertical_bias="0.761" />
 
     <TextView
         android:id="@+id/date"
@@ -106,8 +107,25 @@
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.879" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_label"
+        android:clickable="true"
+        android:text="Forgot Password !!"
+        android:textColor="#0ACFEC"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

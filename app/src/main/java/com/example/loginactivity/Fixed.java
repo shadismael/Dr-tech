@@ -43,11 +43,7 @@ public class Fixed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fixed);
         myarrayList=new ArrayList<>();
-        ///////////////////////////////////////////////////////////////////////////////////////////
-        dialog2 =new Dialog(this);
-        dialog2.setContentView(R.layout.popupshow2);
-        dialog2.setCancelable(false);
-        ////////////////////////////////firebase///////////////////////////////////////////////////
+       // ////////////////////////////////firebase///////////////////////////////////////////////////
         myauth=FirebaseAuth.getInstance();
         mydatabase=FirebaseDatabase.getInstance();
         myRef=FirebaseDatabase.getInstance().getReference(myauth.getCurrentUser().getUid());
@@ -57,8 +53,6 @@ public class Fixed extends AppCompatActivity {
         myarrayAdapter=new MyAdapter<BrokenPhone>(this,myarrayList);
         listView2.setAdapter(myarrayAdapter);
         ////////////////////////////////////////////////////////////////////////////////////////////
-        remove=dialog2.findViewById(R.id.btnRemove2);
-        cancel2=dialog2.findViewById(R.id.btnCancel2);
         btnback=findViewById(R.id.imagebuttonback4);
         btnhome=findViewById(R.id.imagebuttonhome3);
         ////////////////////////////////////////////////////////////////////////////////////////////
@@ -91,27 +85,6 @@ public class Fixed extends AppCompatActivity {
             }
         });
         ////////////////////////////////////////////////////////////////////////////////////////////
-        ////////////////////////////////////cancel button//close pop up show 2 /////////////////////
-        cancel2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog2.cancel();
-                Toast.makeText(Fixed.this, "closed",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        ///////////////////////////////remove button////////////////////////////////////////////////
-       remove.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-              myRef.child("done").child(obj2.getId()).setValue(null);
-               Toast.makeText(Fixed.this, "Removed",
-                       Toast.LENGTH_SHORT).show();
-               Intent m=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
-               startActivity(m);
-           }
-       });
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -136,6 +109,10 @@ public class Fixed extends AppCompatActivity {
     }
     //////////////////////////////////////open dialog///////////////////////////////////////////////
     public void opendialog2(){
+        dialog2 =new Dialog(this);
+        dialog2.setContentView(R.layout.popupshow2);
+        dialog2.setCancelable(false);
+        ////////////////////////////////////////////////////////////////////////////////////////////
         TextView cusname=(TextView)dialog2.findViewById(R.id.nameview);
         TextView phnum=(TextView)dialog2.findViewById(R.id.phonenumberview);
         TextView brnd=(TextView)dialog2.findViewById(R.id.brandview);
@@ -152,9 +129,36 @@ public class Fixed extends AppCompatActivity {
         prs.setText(prs.getText()+" : "+byan.getPassword());
         dn.setText(dn.getText()+" : "+byan.isDone());
         id.setText(id.getText()+" : "+byan.getId());
-
+        ////////////////////////////////////////
+        remove=dialog2.findViewById(R.id.btnRemove2);
+        cancel2=dialog2.findViewById(R.id.btnCancel2);
+        //////////////////////////////////////////
         dialog2.show();
         Toast.makeText(Fixed.this, "opened",
                 Toast.LENGTH_SHORT).show();
+        ////////////////////////////////////cancel button//close pop up show 2 /////////////////////
+        cancel2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog2.cancel();
+
+                Toast.makeText(Fixed.this, "closed",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+        ///////////////////////////////remove button////////////////////////////////////////////////
+        remove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myRef.child("done").child(obj2.getId()).setValue(null);
+                Toast.makeText(Fixed.this, "Removed",
+                        Toast.LENGTH_SHORT).show();
+                Intent m=new Intent(getApplicationContext(), com.example.loginactivity.Lab.class);
+                startActivity(m);
+            }
+        });
+
+
+        ///////////////////////////////////////////////dialog done////////////////////////////////////////////
     }
 }

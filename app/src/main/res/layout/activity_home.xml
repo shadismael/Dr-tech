@@ -70,5 +70,15 @@
         android:textColor="#F74007"
         android:textColorHighlight="#00E6DCDC" />
 
+    <ImageButton
+        android:id="@+id/exit"
+        android:layout_width="69dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/custom_label"
+        app:srcCompat="@drawable/ic_power_settings_new_black_24dp" />
+
 
 </LinearLayout>

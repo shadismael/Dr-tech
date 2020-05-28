@@ -125,7 +125,7 @@ public class ADPTL extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }else{
             Iphone.setName(Name.getText().toString());
-            Iphone.setPhoneNumber(Float.parseFloat(PhoneNumber.getText().toString()));
+            Iphone.setPhoneNumber((PhoneNumber.getText().toString()));
             Iphone.setBrand(Brand.getText().toString());
             Iphone.setPassword(Password.getText().toString());
             Iphone.setDefect(Defect.getText().toString());
